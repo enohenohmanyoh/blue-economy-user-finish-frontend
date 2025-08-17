@@ -1,0 +1,145 @@
+/* Reset default margins and paddings */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Main header container */
+.ati-header {
+  font-family: 'Arial', sans-serif;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: fixed; /* stick to top */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgb(19, 77, 64);
+}
+
+/* Header main section */
+.header-main {
+  height: 85px;
+  display: flex;
+  align-items: center;
+  padding-top: 8px; /* moves everything down */
+  background-color: rgb(19, 77, 64);
+}
+
+/* Container layout */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.logo a {
+  display: inline-block;
+  text-decoration: none;
+  line-height: 4;
+}
+
+.logo-img {
+  max-height: 93px; /* adjust to fit your header */
+  width: auto;
+  display: block;
+}
+
+/* Contact section */
+.header-contact {
+  display: flex;
+  gap: 12px;
+  color: white;
+  font-size: 14px;
+}
+
+.header-contact a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  gap: 5px;
+}
+
+.header-contact a:hover {
+  text-decoration: underline;
+}
+
+/* Navigation menu */
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav li {
+  margin-left: 16px;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.main-nav a:hover {
+  color: #00c3a3;
+}
+
+/* Social media icons */
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #00c3a3;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: auto;
+  }
+
+  .logo-img {
+    max-height: 50px; /* shrink logo on mobile */
+  }
+
+  .header-contact {
+    margin: 6px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .main-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 6px;
+  }
+
+  .social-icons {
+    margin-top: 6px;
+  }
+}
+
+/* Push page content down so it’s not hidden under fixed header */
+body {
+  padding-top: 85px; /* matches header height */
+}

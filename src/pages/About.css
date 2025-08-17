@@ -1,0 +1,95 @@
+.about-page {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+/* Hero Section */
+.about-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+}
+
+/* Modified Intro Section */
+.intro-section {
+  padding: 4rem 10%;
+}
+
+.intro-container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.intro-text {
+  flex: 1;
+  text-align: left;
+}
+
+.intro-text h2 {
+  color: #0077b6;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.intro-image {
+  flex: 1;
+}
+
+.intro-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Rest of your existing CSS remains the same */
+.vision-mission {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 4rem 10%;
+  background-color: #f8f9fa;
+}
+
+/* ... rest of your existing CSS ... */
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-hero {
+    height: 300px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .intro-container {
+    flex-direction: column;
+  }
+
+  .vision-mission {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,168 @@
+/* ---------- Base layout ---------- */
+.checkout-form {
+  display: grid;
+  gap: 16px;
+}
+
+.checkout-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* ---------- CardElement wrapper ---------- */
+.card-element,
+.StripeElement {
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  min-height: 44px; /* ensure tap-friendly */
+}
+
+.card-element:focus,
+.StripeElement--focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+}
+
+/* Stripe invalid/error state */
+.StripeElement--invalid {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.12);
+}
+
+/* Placeholder + text smoothing inside iframe */
+.StripeElement {
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- Button ---------- */
+.pay-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  background: #4f46e5; /* indigo-600 */
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.04s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.25);
+}
+
+.pay-button:hover {
+  background: #4338ca; /* indigo-700 */
+}
+
+.pay-button:active {
+  transform: translateY(1px);
+}
+
+.pay-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Loading spinner option if you add a spinner element inside the btn */
+.pay-button .spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ---------- Messages ---------- */
+.checkout-message {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #ecfdf5; /* green-50 */
+  color: #065f46;      /* green-800 */
+  border: 1px solid #a7f3d0; /* green-200 */
+}
+
+.checkout-message.error {
+  background: #fef2f2; /* red-50 */
+  color: #991b1b;       /* red-800 */
+  border-color: #fecaca;/* red-200 */
+}
+
+/* ---------- Container (optional, if used without page styles) ---------- */
+.checkout-card {
+  background: #ffffff;
+  border: 1px solid #f3f4f6;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* ---------- Helper rows ---------- */
+.row {
+  display: grid;
+  gap: 12px;
+}
+
+.row.inline {
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 520px) {
+  .row.inline {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Dark mode (scope under a .dark class on body or container) ---------- */
+.dark .checkout-label { color: #e5e7eb; }
+
+.dark .card-element,
+.dark .StripeElement {
+  background: #0b1220;
+  border-color: #1f2937;
+  color: #e5e7eb;
+}
+
+.dark .StripeElement--focus {
+  border-color: #818cf8;
+  box-shadow: 0 0 0 4px rgba(129, 140, 248, 0.18);
+}
+
+.dark .pay-button {
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.35);
+}
+
+.dark .checkout-card {
+  background: #0b1220;
+  border-color: #111827;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.4);
+}
+
+.dark .checkout-message {
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.35);
+  color: #d1fae5;
+}
+
+.dark .checkout-message.error {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.35);
+  color: #fecaca;
+}
