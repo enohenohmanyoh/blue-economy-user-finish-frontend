@@ -34,6 +34,7 @@ const Header = () => {
               <li><a href="/online-courses">Online Courses</a></li>
               <li><a href="/contact">Contact Us</a></li>
                <li><a href="/payment">Payment</a></li>
+               <li><a href="/form"> Capability Gap Form</a></li>
         
             </ul>
           </nav>

@@ -15,8 +15,7 @@ import VideoTestimonials from './testimonails/VideoTestimonials';
 import EventsCalendar from './layout/EventsCalendar';
 import ImageGallery from './layout/ImageGallery';
 import PaymentPage from './payment/PaymentPage';
-
-
+import CapabilityGapForm from './form/CapabilityGapForm';
 
 
 
@@ -41,6 +40,8 @@ function App() {
                    <Route path="/gallery" element={<ImageGallery/>} />
                 <Route path="/book-course" element={<BookCourse/>} />
                <Route path="/payment" element={<PaymentPage/>} />
+               
+                <Route path="/form" element={<CapabilityGapForm/>} />
             
                     
                    

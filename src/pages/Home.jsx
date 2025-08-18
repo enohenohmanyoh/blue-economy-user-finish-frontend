@@ -52,7 +52,7 @@ const Home = () => {
 
   // ✅ handle "Book a Course" click
   const handleBookCourse = (courseTitle) => {
-    navigate("/book-course", { state: { courseTitle } });
+    navigate("/form", { state: { courseTitle } });
   };
 
   return (

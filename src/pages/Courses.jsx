@@ -100,7 +100,7 @@ const Courses = () => {
   );
 
   const handleCourseClick = (courseTitle) => {
-    navigate("/book-course", { state: { selectedCourse: courseTitle } });
+    navigate("/form", { state: { selectedCourse: courseTitle } });
   };
 
   return (

@@ -1,6 +1,6 @@
 // src/pages/BookCourse.js
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';   // ✅ added Link
+import { useNavigate, Link } from 'react-router-dom';   // ✅ already imported
 import './BookCourse.css';
 import logo from "../assets/logo.jpeg";
 
@@ -47,7 +47,7 @@ const BookCourse = () => {
       </div>
 
       <div className="form-container">
-        <h2>Course Booking Form</h2>
+        <h2>Register Form | Booking a Course</h2>
         
         <form onSubmit={handleSubmit} className="booking-form">
           {/* --- Input fields --- */}
@@ -137,8 +137,11 @@ const BookCourse = () => {
           </button>
         </form>
 
-        {/* ✅ Extra Router Link to /payment */}
-        
+        {/* ✅ Extra Router Link to go back to /form */}
+        <div className="back-link">
+          <p>Want to do the Capability Gap Assessment first?</p>
+          <Link to="/form" className="link-btn">Go to Assessment Form</Link>
+        </div>
       </div>
     </section>
   );
