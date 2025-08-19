@@ -1,14 +1,16 @@
 import React from "react";
 
-const SectionB = ({ formData, handleChange }) => (
+const SectionB = ({ formData, handleChange, errors }) => (
   <div>
     <h3>Section B: Professional Background</h3>
+
     <label>Highest Qualification Attained</label>
     <input
       type="text"
       value={formData.qualification}
       onChange={(e) => handleChange("qualification", e.target.value)}
     />
+    {errors.qualification && <p className="error">{errors.qualification}</p>}
 
     <label>Area of Specialization</label>
     <input
@@ -16,6 +18,7 @@ const SectionB = ({ formData, handleChange }) => (
       value={formData.specialization}
       onChange={(e) => handleChange("specialization", e.target.value)}
     />
+    {errors.specialization && <p className="error">{errors.specialization}</p>}
 
     <label>Years of Experience</label>
     <select
@@ -29,6 +32,7 @@ const SectionB = ({ formData, handleChange }) => (
       <option>7–10</option>
       <option>10+</option>
     </select>
+    {errors.experience && <p className="error">{errors.experience}</p>}
 
     <label>Previous Relevant Training</label>
     <input

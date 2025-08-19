@@ -27,14 +27,20 @@ const Header = () => {
 
           <nav className="main-nav">
             <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/about">About Us</a></li>
+              <li><a href="/">Home |</a></li>
+              <li><a href="/about">About Us |</a></li>
+              <li><a href="/contact">Contact Us |</a></li>
+               <li><a href="/list"> Courses |</a></li>
+                 <li><a href="/payment"> Payment |</a></li>
+
+              
              
-              <li><a href="/courses">Courses</a></li>
-              <li><a href="/online-courses">Online Courses</a></li>
-              <li><a href="/contact">Contact Us</a></li>
-               <li><a href="/payment">Payment</a></li>
-               <li><a href="/form"> Capability Gap Form</a></li>
+              <li><a href="/online-course">Online Courses</a></li>
+              
+       
+
+              
+    
         
             </ul>
           </nav>

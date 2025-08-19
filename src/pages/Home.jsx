@@ -1,7 +1,7 @@
 import React from "react"; 
 import './Home.css';
 
-import CourseCard from "./CourseCard";
+
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useNavigate } from "react-router-dom";
@@ -12,8 +12,11 @@ import aboutImage from '../assets/p4.webp';
 import p5 from '../assets/p5.webp';
 import p6 from '../assets/p6.png';
 import logoImage from '../assets/logo.jpeg';
-
 import blueVideo from "../assets/blue.mp4";
+import CourseList from "./CourseList";
+import EventsCalendar from "../layout/EventsCalendar";
+
+
 
 const Home = () => {
   const navigate = useNavigate();
@@ -52,7 +55,7 @@ const Home = () => {
 
   // ✅ handle "Book a Course" click
   const handleBookCourse = (courseTitle) => {
-    navigate("/form", { state: { courseTitle } });
+    navigate("/form-payment", { state: { courseTitle } });
   };
 
   return (
@@ -140,20 +143,10 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* Featured Courses */}
-      <section className="featured-courses">
-        <h2>COMING COURSES|TRAINING</h2>
-        <div className="courses-grid">
-          {featuredCourses.map((course) => (
-            <CourseCard
-              key={course.id}
-              course={course}
-              onBook={(selectedCourse) => handleBookCourse(selectedCourse.title)}
-            />
-          ))}
-        </div>
-      </section>
+        
+      <CourseList/>   
+      <EventsCalendar/> 
+      
     </div>
   );
 };

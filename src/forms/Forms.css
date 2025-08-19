@@ -72,9 +72,3 @@ textarea {
   background: #ccc;
   cursor: not-allowed;
 }
-.error {
-  color: red;
-  font-size: 13px;
-  margin-top: -8px;
-  margin-bottom: 10px;
-}

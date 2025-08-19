@@ -4,7 +4,7 @@ const competenciesList = [
   "Maritime Spatial Planning",
   "Blue economy resilience",
   "Climate finance",
-  "Shipping and maritime transport management"
+  "Shipping and maritime transport management",
 ];
 
 const SectionC = ({ formData, handleChange, errors }) => {
@@ -18,6 +18,7 @@ const SectionC = ({ formData, handleChange, errors }) => {
   return (
     <div>
       <h3>Section C: Self-Assessment of Competencies</h3>
+
       {competenciesList.map((course) => (
         <div key={course} className="competency-row">
           <label>{course}</label>
@@ -32,7 +33,7 @@ const SectionC = ({ formData, handleChange, errors }) => {
             <option>Advanced</option>
             <option>High Priority</option>
           </select>
-          {/* ✅ show error for each course if not selected */}
+
           {errors.competencies && !formData.competencies[course] && (
             <p className="error">Please select a level for {course}</p>
           )}
