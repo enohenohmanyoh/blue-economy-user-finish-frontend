@@ -13,7 +13,7 @@ const CourseList = () => {
   }, []);
 
   const fetchCourses = async () => {
-    const response = await axios.get(`${API_URL}/get/all-courses`);
+    const response = await axios.get(`${API_URL}/get/all/course`);
     setCourses(response.data);
   };
 
@@ -28,7 +28,6 @@ const CourseList = () => {
             <th>Title</th>
             <th>Category</th>
             <th>Duration</th>
-            <th>Created At</th>
             <th>Details</th>
           </tr>
         </thead>
@@ -40,9 +39,8 @@ const CourseList = () => {
               <td>{c.courseTitle}</td>
               <td>{c.category}</td>
               <td>{c.duration}</td>
-              <td>{new Date(c.createdAt).toLocaleString()}</td>
               <td>
-                <Link to={`/details/${c.id}`}>View</Link>
+                <Link to={`/course/detail/${c.id}`}>View</Link>
               </td>
             </tr>
           ))}

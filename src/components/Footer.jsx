@@ -1,108 +1,112 @@
-import React from 'react';
-import './Footer.css';
-import footerLogo from '../assets/logo.jpg';   // ✅ replace with your logo file
-import footerImage from '../assets/footer.jpg'; // ✅ replace with your footer image file
+import React, { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import "./Footer.css";
+import footerLogo from "../assets/logo.jpg";
+import footerImage from "../assets/footer.jpg";
+
+const SITE_KEY = "6LdoZrMrAAAAAN0Rab4FeD0kGHBznr1CDGIGG3SU";
 
 const Footer = () => {
+  const [newsletterCaptcha, setNewsletterCaptcha] = useState(null);
+
+  const handleNewsletterSubmit = (e) => {
+    e.preventDefault();
+    if (!newsletterCaptcha) {
+      alert("Please verify that you are not a robot!");
+      return;
+    }
+    alert("Newsletter subscription submitted ✅");
+  };
+
   return (
     <footer className="footer-container">
       <div className="footer-content">
-        
-        {/* Newsletter Subscription Section */}
-        <div className="newsletter-section">
-          <h2>Subscribe to our newsletter</h2>
-          <form className="subscription-form">
-            <div className="form-group">
-              <input type="text" id="name" name="name" placeholder="Name" />
-            </div>
-            <div className="form-group">
-              <input type="email" id="email" name="email" placeholder="Email" />
-            </div>
-            <p className="subscription-text">
-              Ready for valuable updates and tips via email and WhatsApp? 
-              Sign up, and opt out at any time. ❤
-            </p>
-            <div className="terms-checkbox">
-              <input type="checkbox" id="terms" name="terms" />
-              <label htmlFor="terms">I agree with the Terms & Conditions</label>
-            </div>
-            <button type="submit" className="subscribe-btn">Subscribe</button>
-          </form>
-        </div>
 
-        <div className="footer-divider"></div>
-
-        {/* Quick Links Section */}
+        {/* Quick Links + Image + Enquiry */}
         <div className="quick-links-section">
-          <div className="image-placeholder">
-            <img 
-              src={footerLogo} 
-              alt="Footer Logo" 
-              className="footer-logo" 
-            />
-          </div>
-
-          <h3>Quick Links:</h3>
+          <h3>Quick Links</h3>
           <ul className="quick-links">
             <li><a href="/about">About Us</a></li>
-            <li><a href="/courses">Courses</a></li>
+        
             <li><a href="/training-centres">Training Centres</a></li>
             <li><a href="/events">Events Calendar</a></li>
-            <li><a href="/membership">Membership Downloads</a></li>
+          
           </ul>
-        </div>
+          
+          <div className="footer-image-box">
+            <img src={footerImage} alt="Footer Illustration" className="footer-image" />
+          </div>
 
-        <div className="footer-divider"></div>
-
-        {/* Address Section with Social + Image + Enquiry under Phone */}
-        <div className="address-section">
-          <h3>Contact Information</h3>
-          <address>
-            <strong>General inquiries:</strong> <a href="mailto:info@aims.org">info@aims.org</a><br /><br />
-            
-            <strong>Address:</strong><br />
-            206 Ilanga,<br />
-            679 Stanza Bopape Street,<br />
-            Arcadia, Pretoria,<br />
-            South Africa<br /><br />
-
-            <strong>Phone:</strong><br />
-            +27 71 971 3850<br />
-            +27 60 542 3163
-          </address>
-
-          {/* ✅ Social + Image + Enquiry moved under phone */}
-          <div className="social-section">
-            <h3>Follow Us</h3>
-            <p>
-              <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a> |{" "}
-              <a href="#" target="_blank" rel="noopener noreferrer">Twitter/X</a> |{" "}
-              <a href="#" target="_blank" rel="noopener noreferrer">Facebook</a> |{" "}
-              <a href="#" target="_blank" rel="noopener noreferrer">YouTube</a>
-            </p>
-
-            <div className="footer-image-box">
-              <img 
-                src={footerImage} 
-                alt="Footer Illustration" 
-                className="footer-image" 
-              />
-            </div>
-
-            <div className="enquiry-section">
-              <h3>Enquiry</h3>
-              <form className="enquiry-form">
-                <div className="form-group">
-                  <input type="text" id="enquiry-name" name="enquiry-name" placeholder="Name" />
-                </div>
-                <div className="form-group">
-                  <input type="email" id="enquiry-email" name="enquiry-email" placeholder="Email" />
-                </div>
-              </form>
-            </div>
+          {/* Enquiry form moved here under image */}
+          <div className="enquiry-section">
+            <h3>Have Questions?</h3>
+            <input type="text" placeholder="Your Name" />
+            <input type="email" placeholder="Your Email" />
+            <textarea
+              placeholder="Your Message"
+              rows="4"
+              style={{
+                width: "100%",
+                maxWidth: "280px",
+                margin: "0 auto 10px",
+                display: "block",
+                borderRadius: "4px",
+                padding: "6px",
+              }}
+            ></textarea>
+            <button className="subscribe-btn">Send Enquiry</button>
           </div>
         </div>
 
+        {/* Logo now in its own column */}
+        <div className="logo-section">
+          <img src={footerLogo} alt="Footer Logo" className="footer-logo" />
+        </div>
+
+        {/* Contact + Newsletter */}
+        <div className="address-section">
+          <h3>Contact</h3>
+          <address>
+            <strong>Email:</strong>{" "}
+            <a href="mailto:info@aims.org">info@alibel.org</a>
+            <br />
+            <strong>Address:</strong>
+            <br />
+            206 Ilanga, 679 Stanza Bopape Street, Arcadia, Pretoria, South Africa
+            <br />
+            <strong>Phone:</strong> +27 71 971 3333 | +27 60 542 3163
+          </address>
+          <div className="social-section">
+            <h4>Follow Us</h4>
+            <p>
+              <a href="#">LinkedIn</a> | <a href="#">Twitter/X</a> |{" "}
+              <a href="#">Facebook</a> | <a href="#">YouTube</a>
+            </p>
+          </div>
+
+          <div className="newsletter-form-box">
+            <h2>Subscribe to Our Newsletter</h2>
+            <form className="subscription-form" onSubmit={handleNewsletterSubmit}>
+              <div className="form-group">
+                <input type="text" placeholder="Name" />
+              </div>
+              <div className="form-group">
+                <input type="email" placeholder="Email" />
+              </div>
+              <div className="terms-checkbox">
+                <input type="checkbox" id="terms" />
+                <label htmlFor="terms">I agree to the Terms & Conditions</label>
+              </div>
+              <ReCAPTCHA sitekey={SITE_KEY} onChange={setNewsletterCaptcha} />
+              <button type="submit" className="subscribe-btn">Subscribe</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+      <div className="footer-bottom">
+        &copy; {new Date().getFullYear()} Your Company. All Rights Reserved.
       </div>
     </footer>
   );

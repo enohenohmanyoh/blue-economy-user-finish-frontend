@@ -1,7 +1,6 @@
 import React from "react"; 
 import './Home.css';
 
-
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useNavigate } from "react-router-dom";
@@ -15,7 +14,6 @@ import logoImage from '../assets/logo.jpeg';
 import blueVideo from "../assets/blue.mp4";
 import CourseList from "./CourseList";
 import EventsCalendar from "../layout/EventsCalendar";
-
 
 
 const Home = () => {
@@ -52,14 +50,17 @@ const Home = () => {
     { id: 4, src: aboutImage, alt: "Blue Economy" },
     { id: 5, src: p6, alt: "Blue Economy" },
   ];
+  
 
-  // ✅ handle "Book a Course" click
+  // ✅ Corrected handler
   const handleBookCourse = (courseTitle) => {
-    navigate("/form-payment", { state: { courseTitle } });
+    navigate("/forms-payment", { state: { courseTitle } });
   };
 
   return (
+  
     <div className="home-page">
+    
       {/* Logo and Image Slider Side by Side */}
       <div className="logo-slider-container">
         {/* Logo on the right */}
@@ -70,6 +71,7 @@ const Home = () => {
             className="institute-logo"
           />
         </div>
+    
         
         {/* Image Slider with Overlay Text on the left */}
         <div className="image-slider-container relative">
@@ -77,8 +79,6 @@ const Home = () => {
             <h3 className="text-3xl md:text-5xl font-extrabold text-yellow-300 drop-shadow-lg bg-black/50 px-6 py-4 rounded-2xl">
               Welcome to African Institute of Maritime Studies
             </h3>
-            
-   
           </div>
 
           <Carousel
@@ -107,7 +107,7 @@ const Home = () => {
       <div className="welcome-message">
         <div className="welcome-box">
           <p>
-            The <span className="highlight-yellow">African Institute of Maritime Studies (AIMS) </span> 
+            The <span className="highlight-yellow">African Institute of Maritime Studies (AIMS)</span> 
             is the central hub dedicated to building capacity to harness the economic 
             opportunities of Africa's <span className="highlight-cyan">blue economy</span>.
           </p>
@@ -144,9 +144,8 @@ const Home = () => {
         </div>
       </section>
         
-      <CourseList/>   
+      <CourseList onBookCourse={handleBookCourse} />   
       <EventsCalendar/> 
-      
     </div>
   );
 };

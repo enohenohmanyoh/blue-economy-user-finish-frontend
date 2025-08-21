@@ -1,7 +1,7 @@
 /* EventsCalendar.css */
 .events-calendar {
   font-family: 'Arial', sans-serif;
-  max-width: 1200px;
+  max-width: 1600px; /* increased container width */
   margin: 0 auto;
   padding: 20px;
 }
@@ -61,18 +61,22 @@
   font-size: 16px;
 }
 
+/* Horizontal events list - three wider cards per row */
 .events-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px; /* smaller gap to fit wider cards */
   margin-bottom: 30px;
+  justify-content: flex-start;
 }
 
 .event-card {
   display: flex;
+  flex-direction: row;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   overflow: hidden;
+  width: 40%; /* wider cards */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -84,12 +88,12 @@
 .event-date {
   background-color: #e74c3c;
   color: white;
-  padding: 15px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 70px;
+  min-width: 120px;
 }
 
 .event-date .day {
@@ -106,6 +110,10 @@
 .event-details {
   padding: 15px;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden; 
 }
 
 .event-title {
@@ -120,6 +128,7 @@
   flex-wrap: wrap;
   margin-bottom: 15px;
   gap: 10px;
+  word-break: break-word;
 }
 
 .event-type {
@@ -145,6 +154,7 @@
   font-size: 14px;
   display: flex;
   align-items: center;
+  word-break: break-word;
 }
 
 .register-btn {
@@ -156,6 +166,7 @@
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s ease;
+  align-self: start;
 }
 
 .register-btn:hover {
@@ -164,9 +175,9 @@
 
 .no-events {
   text-align: center;
-  grid-column: 1 / -1;
   color: #7f8c8d;
   padding: 40px 0;
+  width: 100%;
 }
 
 .calendar-footer {
@@ -191,9 +202,17 @@
   color: white;
 }
 
+/* Responsive adjustments */
+@media (max-width: 1400px) {
+  .event-card {
+    width: 48%; /* two per row on medium screens */
+  }
+}
+
 @media (max-width: 768px) {
   .events-list {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    gap: 20px;
   }
   
   .calendar-tabs {

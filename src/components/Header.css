@@ -13,7 +13,8 @@ html, body {
   top: 0;
   left: 0;
   z-index: 1000;
-  background-color: rgb(19, 77, 64);
+  background-color: #ffffff; /* restored white background */
+  color: #333; /* text color for visibility on white */
 }
 
 /* Header main section */
@@ -22,7 +23,7 @@ html, body {
   display: flex;
   align-items: center;
   padding-top: 8px; /* moves everything down */
-  background-color: rgb(19, 77, 64);
+  background-color: #ffffff; /* match header background */
 }
 
 /* Container layout */
@@ -53,14 +54,14 @@ html, body {
 .header-contact {
   display: flex;
   gap: 12px;
-  color: white;
+  color: #333; /* match text color to new background */
   font-size: 14px;
 }
 
 .header-contact a {
   display: flex;
   align-items: center;
-  color: white;
+  color: #333;
   text-decoration: none;
   gap: 5px;
 }
@@ -83,14 +84,14 @@ html, body {
 
 .main-nav a {
   text-decoration: none;
-  color: white;
+  color: #333;
   font-size: 15px;
   font-weight: 500;
   transition: color 0.3s;
 }
 
 .main-nav a:hover {
-  color: #00c3a3;
+  color: #00c3a3; /* accent color on hover */
 }
 
 /* Social media icons */
@@ -100,7 +101,7 @@ html, body {
 }
 
 .social-icons a {
-  color: white;
+  color: #333;
   font-size: 15px;
   transition: color 0.3s;
 }

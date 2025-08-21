@@ -1,110 +1,99 @@
+/* Header Container */
 .second-header {
-  font-family: 'Arial', sans-serif;
+  background-color: black;
+  padding: 10px 30px;
+  padding-top: 15px;
   width: 100%;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  position: fixed; /* stays visible on scroll */
-  top: 95px; /* push it below main header */
-  left: 0;
-  z-index: 1000;
-  background-color: rgb(19, 77, 64);
+  position: relative;
+  z-index: 10;
+  box-sizing: border-box;
+  margin-top: 90px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;  /* center menu horizontally */
+  align-items: center;      /* vertically center items */
 }
 
-
+/* Inner container */
 .second-header-container {
+  display: flex;
+  justify-content: center;  /* center the nav menu */
+  align-items: center;
+  max-width: 1200px;
   width: 100%;
-  max-width: 100%; /* Remove any max-width constraints */
-  margin: 0 auto;
-  padding: 0 20px;
 }
 
+/* Nav list styling */
 .second-nav-list {
   display: flex;
+  gap: 25px;
   list-style: none;
   margin: 0;
   padding: 0;
-  justify-content: space-around;
 }
 
-/* Rest of your existing CSS remains exactly the same */
+/* Nav links and user icon link */
+.nav-link,
+.user-icon-link {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.user-icon-link:hover {
+  color: #1abc9c;
+}
+
+.user-icon-link {
+  gap: 5px;
+}
+
+.user-icon-link .nav-icon {
+  color: white;
+  vertical-align: middle;
+}
+
+/* Each nav item */
 .second-nav-item {
   position: relative;
 }
 
-.nav-link {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 10px 16px;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.nav-link:hover {
-  background-color: rgba(255,255,255,0.2);
-}
-
-.dropdown {
-  position: relative;
-}
-
+/* Dropdown menu */
 .dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
-  min-width: max-content;
-  background-color: rgb(19, 77, 64);
-  color: white;
+  background: white;
+  border-radius: 8px;
   padding: 10px 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  min-width: 180px;
   z-index: 1000;
-  max-height: 400px;
-  overflow-y: auto;
+  animation: fadeIn 0.25s ease-in-out;
 }
 
-.dropdown-menu::-webkit-scrollbar {
-  width: 6px;
-}
-.dropdown-menu::-webkit-scrollbar-thumb {
-  background: rgba(255,255,255,0.4);
-  border-radius: 3px;
-}
-.dropdown-menu::-webkit-scrollbar-track {
-  background: transparent;
-}
-
+/* Dropdown items */
 .dropdown-item {
   display: block;
   padding: 10px 16px;
-  color: white;
+  color: #2c3e50;
+  font-size: 14px;
   text-decoration: none;
-  transition: background-color 0.3s;
+  transition: background 0.3s ease;
 }
 
 .dropdown-item:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: white;
+  background: #f0f0f0;
 }
 
-@media (max-width: 768px) {
-  .second-nav-list {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .second-nav-item {
-    margin-bottom: 10px;
-    width: 100%;
-    text-align: center;
-  }
-
-  .dropdown-menu {
-    position: static;
-    width: 100%;
-    box-shadow: none;
-    border: 1px solid #ddd;
-    margin-top: 0;
-    max-height: none;
-    overflow-y: visible;
-  }
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

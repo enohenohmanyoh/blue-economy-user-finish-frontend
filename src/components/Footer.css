@@ -1,183 +1,151 @@
+/* ================= Footer Container ================= */
 .footer-container {
-  padding: 40px 20px;
+  padding: 15px 15px 0; /* very small padding */
   font-family: 'Arial', sans-serif;
   width: 100%;
   color: white;
   background-color: rgb(19, 77, 64);
-  position: relative; /* no fixed position */
-  margin-top: auto; /* pushes it to bottom in flex layout */
-  z-index: 1000;
 }
 
 .footer-content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 30px;
+  gap: 15px; /* tighter gaps */
   align-items: flex-start;
 }
 
 .newsletter-section,
 .quick-links-section,
 .address-section,
-.enquiry-section {
+.enquiry-section,
+.logo-section {
   flex: 1;
-  min-width: 250px;
-}
-
-.footer-divider {
-  width: 1px;
-  background-color: rgba(255, 255, 255, 0.2);
-  margin: 0 15px;
-}
-
-h2, h3 {
-  color: white;
-  margin-bottom: 20px;
-}
-
-h2 {
-  font-size: 24px;
-}
-
-h3 {
-  font-size: 18px;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-input[type="text"],
-input[type="email"] {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  min-width: 220px;
   font-size: 14px;
-  background-color: rgba(255, 255, 255, 0.9);
 }
 
-.subscription-text {
-  margin: 15px 0;
-  line-height: 1.5;
-}
-
-.terms-checkbox {
-  display: flex;
-  align-items: center;
-  margin: 15px 0;
-}
-
-.terms-checkbox input {
-  margin-right: 10px;
-}
-
-.subscribe-btn {
-  background-color: #ff5722;
+/* Headings smaller */
+.footer-content h2,
+.footer-content h3,
+.footer-content h4 {
+  margin-bottom: 6px;
+  font-size: 16px;
   color: white;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s;
 }
 
-.subscribe-btn:hover {
-  background-color: #e64a19;
-}
-
-/* --- Images --- */
+/* ---------------- Images ---------------- */
 .footer-image-box {
-  margin-bottom: 20px;
+  margin-top: 5px;
   text-align: center;
 }
 
 .footer-image {
-  max-width: 200px;
+  max-width: 220px; /* increased image */
   height: auto;
-  border-radius: 8px; /* optional rounded corners */
-  display: block;
-  margin: 0 auto;
+  border-radius: 6px;
 }
 
 .footer-logo {
-  max-width: 160px;
-  height: auto;
   display: block;
-  margin: 0 auto 20px;
+  margin: 12px auto 0;
+  max-width: 180px; /* increased logo */
+  height: auto;
 }
 
+/* ---------------- Forms ---------------- */
+.enquiry-section input,
+.enquiry-section textarea,
+.subscription-form input {
+  width: 85%;
+  padding: 5px; /* smaller input height */
+  margin-bottom: 6px; /* less spacing */
+  font-size: 13px;
+  border-radius: 3px;
+  border: none;
+  color: black; /* text inside inputs */
+}
+
+.enquiry-section textarea {
+  height: 60px; /* smaller textarea */
+  resize: none;
+}
+
+.subscribe-btn {
+  background-color: #f1c40f;
+  color: black;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.subscribe-btn:hover {
+  background-color: #d4ac0d;
+}
+
+/* ---------------- Quick Links ---------------- */
 .quick-links {
-  list-style: none;
+  list-style: none; /* removes bullet points */
   padding: 0;
+  margin: 0;
 }
 
 .quick-links li {
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
 .quick-links a {
-  color: white;
-  text-decoration: none;
+  color: white; /* all links white */
+  text-decoration: none; /* remove underline */
+  font-size: 14px;
   transition: opacity 0.3s;
-  opacity: 0.9;
 }
 
 .quick-links a:hover {
-  opacity: 1;
-  text-decoration: underline;
+  opacity: 0.8; /* subtle hover effect */
+  text-decoration: none;
 }
 
-address {
-  font-style: normal;
-  line-height: 1.6;
-  opacity: 0.9;
+/* ---------------- Contact / Socials ---------------- */
+address,
+.footer-container p,
+.footer-container label,
+.social-section a {
+  color: white;
 }
 
-/* --- Enquiry Section Updates --- */
-.enquiry-section {
+/* ---------------- Footer Bottom ---------------- */
+.footer-bottom {
   text-align: center;
+  padding: 8px 0 5px; /* minimal padding */
+  font-size: 12px;
+  opacity: 0.8;
+  margin-top: 5px; /* small gap above bottom */
 }
 
-.enquiry-section h3 {
-  text-align: center;
+/* ---------------- Remove extra space ---------------- */
+.footer-container *:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
-.enquiry-section input::placeholder {
-  font-size: 14px; /* bigger placeholder */
-}
-
-.enquiry-section input[type="text"],
-.enquiry-section input[type="email"] {
-  padding: 10px;
-  font-size: 14px;
-  max-width: 250px; /* wider than before */
-  margin: 0 auto 15px; /* centers horizontally */
-  display: block; /* ensure centering works */
-}
-
-/* --- Responsive --- */
+/* ---------------- Responsive ---------------- */
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
-    gap: 20px;
-  }
-  
-  .footer-divider {
-    width: 100%;
-    height: 1px;
-    margin: 20px 0;
-  }
-
-  .enquiry-section input[type="text"],
-  .enquiry-section input[type="email"] {
-    max-width: 100%;
+    gap: 15px;
   }
 
   .footer-image,
   .footer-logo {
     max-width: 100%;
+  }
+
+  .enquiry-section input,
+  .enquiry-section textarea,
+  .subscription-form input {
+    width: 95%;
   }
 }

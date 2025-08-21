@@ -3,6 +3,9 @@ import './Header.css';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaEnvelope, FaPhone, FaWhatsapp } from 'react-icons/fa';
 import logo from '../assets/logo.jpeg';   // ✅ replace with your actual logo file (PNG/JPG/SVG)
 
+
+
+
 const Header = () => {
   return (
     <header className="ati-header">
@@ -18,29 +21,21 @@ const Header = () => {
 
           <div className="header-contact">
             <a href="mailto:info@aims.org">
-              <FaEnvelope /> info@aims.org
+              <FaEnvelope /> info@alibel.org
             </a>
             <a href="tel:+27120232302">
-              <FaPhone /> +27 12 023 2302
+              <FaPhone /> +27 12 033 6574
             </a>
           </div>
 
+          {/* ✅ Navigation Menu (cleaned up) */}
           <nav className="main-nav">
             <ul>
               <li><a href="/">Home |</a></li>
               <li><a href="/about">About Us |</a></li>
               <li><a href="/contact">Contact Us |</a></li>
-               <li><a href="/list"> Courses |</a></li>
-                 <li><a href="/payment"> Payment |</a></li>
-
-              
-             
-              <li><a href="/online-course">Online Courses</a></li>
-              
-       
-
-              
-    
+              <li><a href="/course/list">Our Training |</a></li>
+              <li><a href="/online/course">Online Training |</a></li>
         
             </ul>
           </nav>
@@ -61,6 +56,8 @@ const Header = () => {
           </div>
         </div>
       </div>
+   
+            
     </header>
   );
 };

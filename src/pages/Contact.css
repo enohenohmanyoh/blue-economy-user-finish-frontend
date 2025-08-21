@@ -1,7 +1,19 @@
+/* Contact Page */
 .contact-page {
   font-family: 'Arial', sans-serif;
   color: #333;
   line-height: 1.6;
+  width: 100%;          /* full page width */
+  margin: 0;
+  padding: 20px;        /* padding inside border */
+  border: 3px solid #0077b6;  /* main border */
+  border-radius: 12px;        /* rounded corners */
+  box-sizing: border-box;     /* keeps border within 100% width */
+}
+
+/* Center only the main sections */
+.contact-content,
+.contact-map {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;

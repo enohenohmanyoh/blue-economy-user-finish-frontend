@@ -1,0 +1,159 @@
+/* ================================
+   Full-page Container
+   ================================ */
+.event-register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  /* Gradient background */
+  background: linear-gradient(135deg, #1abc9c, #16a085);
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+}
+
+/* ================================
+   Registration Card
+   ================================ */
+.event-register-card {
+  background: rgba(255, 255, 255, 0.95); /* frosted effect */
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 800px; /* slightly narrower so form feels centered */
+  backdrop-filter: blur(5px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center contents */
+}
+
+/* Title */
+.form-title {
+  margin-bottom: 25px;
+  color: #2c3e50;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+}
+
+/* Form messages */
+.form-message {
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #e74c3c;
+  text-align: center;
+  width: 100%;
+}
+
+/* ================================
+   Landscape Form Layout
+   ================================ */
+.register-form {
+  display: flex;
+  flex-wrap: wrap;       /* allow rows to wrap */
+  gap: 20px;             /* spacing between fields */
+  justify-content: center; /* center the form groups */
+  width: 100%;
+  max-width: 700px;      /* keep form narrower inside card */
+}
+
+/* Each field takes about half row */
+.register-form .form-group {
+  flex: 1 1 45%;  /* two fields per row */
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/* Labels */
+.register-form label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #34495e;
+  font-size: 14px;
+}
+
+/* Inputs & Selects */
+.register-form input,
+.register-form select {
+  padding: 12px 14px;
+  border: 1px solid #dcdde1;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #2c3e50;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-form input:focus,
+.register-form select:focus {
+  border-color: #1abc9c;
+  box-shadow: 0 0 5px rgba(26, 188, 156, 0.3);
+}
+
+/* ================================
+   Buttons
+   ================================ */
+.submit-btn {
+  flex: 1 1 100%; /* full row */
+  padding: 12px 0;
+  background: #1abc9c;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 5px;
+}
+
+.submit-btn:hover {
+  background: #16a085;
+}
+
+.submit-btn:disabled {
+  background: #95a5a6;
+  cursor: not-allowed;
+}
+
+/* ================================
+   Back Link
+   ================================ */
+.back-link {
+  flex: 1 1 100%;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.back-link a {
+  color: #34495e;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.back-link a:hover {
+  color: #1abc9c;
+}
+
+/* ================================
+   Responsive Design
+   ================================ */
+@media (max-width: 768px) {
+  .event-register-card {
+    max-width: 100%;
+    padding: 30px 20px;
+  }
+
+  .register-form .form-group {
+    flex: 1 1 100%; /* stack fields vertically */
+  }
+}

@@ -1,0 +1,263 @@
+/* Main Layout Container */
+.booking-layout {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Form Container (Now on the Right Side) */
+.form-container {
+  flex: 1;
+  min-width: 0;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container h2 {
+  color: #2d3748;
+  font-size: 28px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Form Elements */
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #4a5568;
+  font-size: 15px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  background-color: #f8fafc;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #4299e1;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+  background-color: #ffffff;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Select dropdown styling */
+.form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 36px;
+}
+
+/* Date input styling */
+.form-group input[type="date"] {
+  position: relative;
+}
+
+.form-group input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* Submit Button */
+.submit-btn {
+  background-color: #4299e1;
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 100%;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background-color: #3182ce;
+}
+
+.submit-btn:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+/* Logo Container (Now on the Left Side) */
+.logo-container {
+  flex: 0 0 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 30px;
+  height: fit-content;
+}
+
+.booking-logo {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+/* Payment Success Section */
+.payment-success {
+  background: #f0fff4;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #c6f6d5;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.payment-success h3 {
+  color: #2f855a;
+  margin-bottom: 15px;
+}
+
+/* Form Summary Section */
+.form-summary {
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  border: 1px solid #edf2f7;
+}
+
+.form-summary h3 {
+  margin-top: 0;
+  color: #2d3748;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.form-summary p {
+  margin: 8px 0;
+  color: #4a5568;
+}
+
+/* Back Button */
+.back-btn {
+  background: #e2e8f0;
+  color: #4a5568;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 100%;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.back-btn:hover {
+  background: #cbd5e0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .booking-layout {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .logo-container {
+    flex: 1 1 100%;
+    width: 100%;
+    position: static;
+    order: 1;
+  }
+  
+  .booking-logo {
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .booking-layout {
+    padding: 20px 15px;
+  }
+  
+  .form-container,
+  .logo-container {
+    padding: 20px;
+  }
+  
+  .form-container h2 {
+    font-size: 24px;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 10px 12px;
+  }
+}
+.back-link {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.link-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 18px;
+  background: #00509e;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.link-btn:hover {
+  background: #003f7f;
+}

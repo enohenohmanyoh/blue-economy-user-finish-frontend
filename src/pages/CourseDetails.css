@@ -1,27 +1,57 @@
-.course-details {
+/* Full-page gradient background */
+.course-details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1abc9c, #16a085);
+  padding: 20px;
+}
+
+/* Frosted glass card */
+.course-details-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
   max-width: 600px;
-  margin: 2rem auto;
-  padding: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background: #fafafa;
+  width: 100%;
+  text-align: left;
+  backdrop-filter: blur(5px);
 }
 
-.course-details h2 {
-  margin-bottom: 1rem;
-  text-align: center;
+/* Headings */
+.course-details-card h2 {
+  color: #2c3e50;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
-.course-details p {
-  margin: 0.5rem 0;
+/* Course info paragraphs */
+.course-details-card p {
+  font-size: 16px;
+  color: #34495e;
+  margin-bottom: 10px;
 }
 
-.course-details a {
-  display: inline-block;
-  margin-top: 1rem;
+/* Links / buttons */
+.course-details-card .course-links {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.course-details-card .course-links a {
   text-decoration: none;
-  color: white;
-  background: #0077cc;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background 0.3s ease;
+  color: #fff;
+  background: #1abc9c;
+}
+
+.course-details-card .course-links a:hover {
+  background: #16a085;
 }

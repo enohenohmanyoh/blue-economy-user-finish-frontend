@@ -1,0 +1,36 @@
+.account-menu {
+  position: relative;
+}
+
+.menu-toggle {
+  background: transparent;
+  color: #ffd700; /* Gold icon */
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: #000; /* 🔹 Pure black */
+  border: 1px solid #333;
+  border-radius: 8px;
+  width: 200px;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  z-index: 100;
+}
+
+.dropdown li {
+  padding: 12px 15px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dropdown li:hover {
+  background: #ffd700;
+  color: #000;
+}
