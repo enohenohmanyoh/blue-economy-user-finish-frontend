@@ -1,22 +1,23 @@
-/* Base Styles */
+/* ====================== Base Styles ====================== */
 .home-page {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
   line-height: 1.6;
-
-  /* ✅ Page border */
-  border: 4px solid #0056b3;   /* navy blue border */
+  border: 4px solid #0056b3;
   border-radius: 12px;
   max-width: 1300px;
-  margin: 20px auto;
-  padding: 10px;
+  margin: 50px auto;
+  padding: 30px;
+
+  /* Pull content very close to headers */
+  padding-top: 20px; /* minimal space so content doesn't hide behind headers */
   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
-/* Logo & Slider Container */
+/* ====================== Logo & Slider ====================== */
 .logo-slider-container {
   display: flex;
-  flex-direction: row-reverse;   /* logo on the right */
+  flex-direction: row-reverse;
   align-items: center;
   gap: 20px;
   padding: 20px;
@@ -35,7 +36,7 @@
   max-width: 100%;
   height: auto;
   border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
   border: 3px solid #fff;
   transition: transform 0.3s ease;
 }
@@ -50,7 +51,7 @@
   position: relative;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .slider-image {
@@ -60,12 +61,12 @@
   border-radius: 15px;
 }
 
-/* ✅ Overlay Title - single line */
+/* Overlay Title */
 .image-slider-container h3 {
-  white-space: nowrap;       /* keep text on one line */
-  font-size: 1.5rem;         /* default desktop size */
+  white-space: nowrap;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: #fcd34d;            /* Tailwind yellow-300 */
+  color: #fcd34d;
   text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
   background: rgba(0,0,0,0.5);
   padding: 10px 20px;
@@ -75,7 +76,7 @@
   text-overflow: ellipsis;
 }
 
-/* ✅ Welcome Message Section - Bigger Font */
+/* ====================== Welcome Message ====================== */
 .welcome-message {
   padding: 40px 20px;
   text-align: center;
@@ -88,9 +89,9 @@
   padding: 30px;
   background-color: white;
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  font-size: 1.2rem;   /* ✅ larger font size */
-  line-height: 1.8;    /* ✅ improved readability */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  font-size: 1.2rem;
+  line-height: 1.8;
 }
 
 .highlight-yellow {
@@ -103,7 +104,7 @@
   font-weight: bold;
 }
 
-/* Blue Economy Section */
+/* ====================== Blue Economy Section ====================== */
 .blue-economy-intro {
   padding: 40px 20px;
   background-color: #e9ecef;
@@ -123,7 +124,7 @@
 .video-container {
   margin-top: 30px;
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
 }
@@ -135,10 +136,10 @@
   width: 100%;
   height: 100%;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* Featured Courses */
+/* ====================== Featured Courses ====================== */
 .featured-courses {
   padding: 40px 20px;
   text-align: center;
@@ -162,7 +163,7 @@
   background: white;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
 }
 
@@ -203,7 +204,9 @@
   background-color: #003d7a;
 }
 
-/* ✅ Responsive Adjustments */
+/* ====================== Responsive Adjustments ====================== */
+
+/* Medium screens */
 @media (max-width: 1024px) {
   .image-slider-container h3 {
     font-size: 1.3rem;
@@ -215,6 +218,7 @@
   }
 }
 
+/* Tablets */
 @media (max-width: 768px) {
   .logo-slider-container {
     flex-direction: column;
@@ -243,10 +247,16 @@
     font-size: 1.05rem;
     line-height: 1.7;
   }
+
+  /* Pull content close on tablet */
+  .home-page {
+    padding-top: 15px;
+  }
 }
 
+/* Mobile phones */
 @media (max-width: 480px) {
-  .welcome-box, 
+  .welcome-box,
   .intro-content {
     padding: 15px;
   }
@@ -259,5 +269,18 @@
   .welcome-box {
     font-size: 1rem;
     line-height: 1.6;
+  }
+
+  .logo-container {
+    width: 70%;
+  }
+
+  .slider-image {
+    height: 250px;
+  }
+
+  /* Pull content very close on mobile */
+  .home-page {
+    padding-top: 10px;
   }
 }

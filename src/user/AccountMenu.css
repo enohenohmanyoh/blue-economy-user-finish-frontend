@@ -1,19 +1,26 @@
+/* Account Menu Container */
 .account-menu {
   position: relative;
 }
 
+/* Menu Toggle Button */
 .menu-toggle {
   background: transparent;
   color: #ffd700; /* Gold icon */
   border: none;
   cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
+/* Dropdown Menu */
 .dropdown {
   position: absolute;
   top: 110%;
   left: 0;
-  background: #000; /* 🔹 Pure black */
+  background: #000; /* Pure black */
   border: 1px solid #333;
   border-radius: 8px;
   width: 200px;
@@ -21,16 +28,53 @@
   padding: 10px 0;
   margin: 0;
   z-index: 100;
+  display: none; /* hidden by default */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
+/* Show dropdown when active */
+.account-menu.active .dropdown {
+  display: block;
+}
+
+/* Dropdown items */
 .dropdown li {
   padding: 12px 15px;
   color: white;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
 }
 
 .dropdown li:hover {
   background: #ffd700;
   color: #000;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .dropdown {
+    width: 100%; /* full width on mobile */
+    top: 100%;
+    left: 0;
+  }
+
+  .menu-toggle {
+    font-size: 16px;
+  }
+
+  .dropdown li {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-toggle {
+    font-size: 14px;
+  }
+
+  .dropdown li {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
 }

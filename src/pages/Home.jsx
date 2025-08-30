@@ -107,7 +107,7 @@ const Home = () => {
       <div className="welcome-message">
         <div className="welcome-box">
           <p>
-            The <span className="highlight-yellow">African Institute of Maritime Studies (AIMS)</span> 
+            The <span className="highlight-yellow">African Institute of Maritime Studies (AIMS) </span> 
             is the central hub dedicated to building capacity to harness the economic 
             opportunities of Africa's <span className="highlight-cyan">blue economy</span>.
           </p>

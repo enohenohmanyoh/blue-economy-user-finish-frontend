@@ -6,33 +6,24 @@ const SecondHeader = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const dropdownRefs = useRef({});
 
+  // Close dropdown if click is outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      // Check if click is outside any dropdown
       let clickedOutside = true;
-      
       for (const key in dropdownRefs.current) {
         if (dropdownRefs.current[key] && dropdownRefs.current[key].contains(event.target)) {
           clickedOutside = false;
           break;
         }
       }
-      
-      if (clickedOutside) {
-        setActiveDropdown(null);
-      }
+      if (clickedOutside) setActiveDropdown(null);
     };
-    
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const handleDropdownToggle = (dropdownName) => {
-    if (activeDropdown === dropdownName) {
-      setActiveDropdown(null);
-    } else {
-      setActiveDropdown(dropdownName);
-    }
+    setActiveDropdown(prev => prev === dropdownName ? null : dropdownName);
   };
 
   return (
@@ -41,7 +32,7 @@ const SecondHeader = () => {
         <nav className="second-nav">
           <ul className="second-nav-list">
 
-            {/* Testimonials */}
+            {/* Testimonials Dropdown */}
             <li className="second-nav-item"
                 ref={el => dropdownRefs.current.testimonials = el}
                 onMouseEnter={() => setActiveDropdown('testimonials')}
@@ -56,7 +47,7 @@ const SecondHeader = () => {
               )}
             </li>
 
-            {/* Training Centres */}
+            {/* Training Centres Dropdown */}
             <li className="second-nav-item"
                 ref={el => dropdownRefs.current.centres = el}
                 onMouseEnter={() => setActiveDropdown('centres')}
@@ -69,7 +60,6 @@ const SecondHeader = () => {
                   <a href="/center/pretoria" className="dropdown-item">Pretoria</a>
                   <a href="/center/durban" className="dropdown-item">Durban</a>
                   <a href="/center/santon" className="dropdown-item">Sandton</a>
-              
                   <a href="/center/capetown" className="dropdown-item">Cape Town</a>
                 </div>
               )}
@@ -80,7 +70,7 @@ const SecondHeader = () => {
               <a href="/event/list" className="nav-link">Events Calendar</a>
             </li>
 
-            {/* Memberships / Accreditations */}
+            {/* Memberships / Accreditations Dropdown */}
             <li className="second-nav-item"
                 ref={el => dropdownRefs.current.memberships = el}
                 onMouseEnter={() => setActiveDropdown('memberships')}
@@ -105,10 +95,10 @@ const SecondHeader = () => {
 
             {/* Team Builder */}
             <li className="second-nav-item">
-              <a href="/team" className="nav-link">Team Builder</a>
+              <a href="/team/builder" className="nav-link">Team Builder</a>
             </li>
 
-            {/* Account Dropdown with human icon */}
+            {/* User Account Dropdown */}
             <li className="second-nav-item"
                 ref={el => dropdownRefs.current.user = el}
                 onMouseEnter={() => setActiveDropdown('user')}

@@ -1,17 +1,17 @@
-/* Header Container */
+/* Second Header Container */
 .second-header {
   background-color: black;
   padding: 10px 30px;
-  padding-top: 15px;
   width: 100%;
-  position: relative;
-  z-index: 10;
+  position: sticky;
+  top: 90px; /* 👈 push it down below the first header (adjust if your first header height changes) */
+  z-index: 900;
   box-sizing: border-box;
-  margin-top: 90px;
-  border-radius: 8px;
+  border-radius: 0; /* cleaner look */
   display: flex;
-  justify-content: center;  /* center menu horizontally */
-  align-items: center;      /* vertically center items */
+  justify-content: center;  
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 /* Inner container */
@@ -26,10 +26,12 @@
 /* Nav list styling */
 .second-nav-list {
   display: flex;
+  justify-content: center; /* 👈 center links */
   gap: 25px;
   list-style: none;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap; /* wrap nicely on mobile */
 }
 
 /* Nav links and user icon link */
@@ -96,4 +98,24 @@
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* ✅ Responsive for mobile */
+@media (max-width: 768px) {
+  .second-header {
+    top: 70px; /* smaller pushdown for smaller header size on mobile */
+    padding: 8px 15px;
+  }
+
+  .second-nav-list {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .dropdown-menu {
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 200px;
+  }
 }

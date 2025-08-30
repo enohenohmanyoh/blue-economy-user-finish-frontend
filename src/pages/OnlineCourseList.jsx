@@ -5,7 +5,7 @@ import "./CourseList.css";
 
 const API_URL = "http://localhost:8080/api/payments";
 
-const CourseList = () => {
+const OnlineCourseList = () => {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
@@ -13,16 +13,20 @@ const CourseList = () => {
   }, []);
 
   const fetchCourses = async () => {
-    const response = await axios.get(`${API_URL}/get/all/course`);
-    setCourses(response.data);
+    try {
+      const response = await axios.get(`${API_URL}/get/all/online/course`);
+      setCourses(response.data);
+    } catch (err) {
+      console.error("Error fetching courses:", err);
+    }
   };
 
   return (
     <div className="course-container">
-      <h2 className="section-title">All Courses</h2>
+      <h2 className="section-title">All Online Courses</h2>
 
       {courses.length === 0 ? (
-        <p className="no-courses">No courses available.</p>
+        <p className="no-courses">No online courses available.</p>
       ) : (
         <div className="course-list">
           {courses.map((c) => (
@@ -31,6 +35,7 @@ const CourseList = () => {
                 <h3>{c.courseTitle}</h3>
                 <p><strong>Code:</strong> {c.courseCode}</p>
                 <p><strong>Category:</strong> {c.category}</p>
+                <p><strong>Instructor:</strong> {c.instructorName}</p>
                 <p><strong>Duration:</strong> {c.duration}</p>
               </div>
               <Link className="details-link" to={`/course/detail/${c.id}`}>
@@ -44,4 +49,4 @@ const CourseList = () => {
   );
 };
 
-export default CourseList;
+export default OnlineCourseList;

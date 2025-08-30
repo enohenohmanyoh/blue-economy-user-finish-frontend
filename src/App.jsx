@@ -31,6 +31,8 @@ import { CapetownTrainingCenter } from './components/CapetownTrainingCenter';
 import { ForgotPassword } from './auth/ForgotPassword'
 import { ResetPassword } from './auth/ResetPassword';
 import OnlineCourseList from './pages/OnlineCourseList';
+import TeamBuilder from './layout/TeamBuilder';
+
 
 
 
@@ -72,6 +74,8 @@ function App() {
           
           
           <Route path="/gallery" element={<WorkshopGallery/>} />
+                 <Route path="/team/builder" element={<TeamBuilder/>} />
+        
          
          
           <Route path="/user/dashboard/:id" element={<Dashboard/>} />

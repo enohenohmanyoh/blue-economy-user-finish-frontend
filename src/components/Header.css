@@ -1,60 +1,55 @@
-/* Reset default margins and paddings */
+/* Reset */
 html, body {
   margin: 0;
   padding: 0;
 }
 
-/* Main header container */
+/* Fixed Header */
 .ati-header {
-  font-family: 'Arial', sans-serif;
   width: 100%;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  position: fixed; /* stick to top */
+  position: fixed;
   top: 0;
   left: 0;
+  background: #fff;
   z-index: 1000;
-  background-color: #ffffff; /* restored white background */
-  color: #333; /* text color for visibility on white */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Header main section */
 .header-main {
-  height: 85px;
   display: flex;
   align-items: center;
-  padding-top: 8px; /* moves everything down */
-  background-color: #ffffff; /* match header background */
+  height: 85px;
 }
 
-/* Container layout */
 .container {
   width: 90%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
 }
 
-/* Logo */
-.logo a {
-  display: inline-block;
-  text-decoration: none;
-  line-height: 4;
+/* ------------------ */
+/* Logo + Contact Box */
+/* ------------------ */
+.logo-contact {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* space between logo and contact */
 }
 
 .logo-img {
-  max-height: 93px; /* adjust to fit your header */
+  max-height: 60px;
   width: auto;
   display: block;
 }
 
-/* Contact section */
+/* Contact info beside logo */
 .header-contact {
   display: flex;
-  gap: 12px;
-  color: #333; /* match text color to new background */
+  flex-direction: column; /* stack vertically */
+  gap: 4px;
   font-size: 14px;
 }
 
@@ -63,23 +58,28 @@ html, body {
   align-items: center;
   color: #333;
   text-decoration: none;
-  gap: 5px;
+  gap: 6px;
 }
 
 .header-contact a:hover {
   text-decoration: underline;
 }
 
-/* Navigation menu */
+/* ------------------ */
+/* Nav + Socials */
+/* ------------------ */
+.nav-wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
 .main-nav ul {
   display: flex;
+  gap: 16px;
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.main-nav li {
-  margin-left: 16px;
 }
 
 .main-nav a {
@@ -87,22 +87,22 @@ html, body {
   color: #333;
   font-size: 15px;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 .main-nav a:hover {
-  color: #00c3a3; /* accent color on hover */
+  color: #00c3a3;
 }
 
 /* Social media icons */
 .social-icons {
   display: flex;
-  gap: 10px;
+  gap: 12px;
 }
 
 .social-icons a {
   color: #333;
-  font-size: 15px;
+  font-size: 16px;
   transition: color 0.3s;
 }
 
@@ -110,37 +110,64 @@ html, body {
   color: #00c3a3;
 }
 
-/* Responsive styling */
+/* ------------------ */
+/* Mobile Responsive */
+/* ------------------ */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  color: #333;
+}
+
 @media (max-width: 768px) {
-  .container {
+  /* Stack logo + contact */
+  .logo-contact {
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    height: auto;
-  }
-
-  .logo-img {
-    max-height: 50px; /* shrink logo on mobile */
+    gap: 6px;
   }
 
   .header-contact {
-    margin: 6px 0;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Hamburger visible */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Hide nav + socials until toggle */
+  .nav-wrapper {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #fff;
+    padding: 15px;
+    position: absolute;
+    top: 85px;
+    left: 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  }
+
+  .nav-wrapper.open {
+    display: flex;
   }
 
   .main-nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 6px;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+    align-items: center;
   }
 
   .social-icons {
-    margin-top: 6px;
+    margin-top: 10px;
+    justify-content: center;
   }
 }
 
-/* Push page content down so it’s not hidden under fixed header */
+/* Push page content down so it’s not hidden under header */
 body {
-  padding-top: 85px; /* matches header height */
+  padding-top: 85px;
 }

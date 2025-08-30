@@ -1,7 +1,7 @@
-/* EventsCalendar.css */
+/* Base Styles */
 .events-calendar {
   font-family: 'Arial', sans-serif;
-  max-width: 1600px; /* increased container width */
+  max-width: 1600px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -13,6 +13,7 @@
   font-size: 28px;
 }
 
+/* Tabs */
 .calendar-tabs {
   display: flex;
   justify-content: center;
@@ -47,6 +48,7 @@
   background-color: #e74c3c;
 }
 
+/* Month selector */
 .month-selector {
   display: flex;
   justify-content: center;
@@ -61,11 +63,11 @@
   font-size: 16px;
 }
 
-/* Horizontal events list - three wider cards per row */
+/* Events list */
 .events-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px; /* smaller gap to fit wider cards */
+  gap: 12px;
   margin-bottom: 30px;
   justify-content: flex-start;
 }
@@ -76,7 +78,7 @@
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   overflow: hidden;
-  width: 40%; /* wider cards */
+  width: 40%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -85,6 +87,7 @@
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
+/* Event date */
 .event-date {
   background-color: #e74c3c;
   color: white;
@@ -107,13 +110,14 @@
   text-transform: uppercase;
 }
 
+/* Event details */
 .event-details {
   padding: 15px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .event-title {
@@ -203,23 +207,120 @@
 }
 
 /* Responsive adjustments */
+
+/* Medium screens */
 @media (max-width: 1400px) {
   .event-card {
-    width: 48%; /* two per row on medium screens */
+    width: 48%;
   }
 }
 
+/* Tablets and small desktops */
+@media (max-width: 1024px) {
+  .event-card {
+    width: 100%;
+    flex-direction: row;
+  }
+}
+
+/* Tablets and mobile */
 @media (max-width: 768px) {
   .events-list {
     flex-direction: column;
     gap: 20px;
   }
-  
+
   .calendar-tabs {
     flex-wrap: wrap;
   }
-  
+
   .tab-btn {
     margin-bottom: 10px;
+  }
+
+  .event-card {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .event-date {
+    width: 100%;
+    min-width: auto;
+    padding: 15px 0;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .event-date .day {
+    font-size: 22px;
+  }
+
+  .event-date .month {
+    font-size: 12px;
+  }
+
+  .event-title {
+    font-size: 16px;
+  }
+
+  .event-meta {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .event-location {
+    font-size: 13px;
+  }
+
+  .register-btn {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 22px;
+  }
+
+  .tab-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .event-card {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .event-date {
+    padding: 10px 0;
+  }
+
+  .event-date .day {
+    font-size: 18px;
+  }
+
+  .event-date .month {
+    font-size: 10px;
+  }
+
+  .event-title {
+    font-size: 14px;
+  }
+
+  .event-meta {
+    font-size: 12px;
+  }
+
+  .event-location {
+    font-size: 12px;
+  }
+
+  .register-btn {
+    font-size: 13px;
+    padding: 8px 0;
   }
 }
